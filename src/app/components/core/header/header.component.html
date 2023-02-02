@@ -1,0 +1,25 @@
+<div id="menu">
+    <div id="menu_alt">
+        <div id="menu_alt_img">
+            <img (click)="menuTrigger()" src="../../../../assets/hamburger.png" />
+        </div> 
+    </div>
+    <div id="menu_flex">
+        <p><a routerLink="/home" routerLinkActive="active">HOME</a></p>
+        <p><a routerLink="/script-list" routerLinkActive="active">SCRIPTS</a></p>       
+        <p><a routerLink="/tool-list" routerLinkActive="active">OUTILS</a></p>       
+        <p><a routerLink="/source-list" routerLinkActive="active">SOURCES</a></p>           
+    </div>
+</div>
+
+<div id="menu_mobile" [ngClass]="menuActive == true ? 'active_menu' : 'hidden_menu'">
+    <div id="logo">
+        <img (click)="menuTrigger()" src="../../../../assets/logo_01.png" />
+    </div>
+    <p (click)="menuTrigger()"><a routerLink="/home" routerLinkActive="active">HOME</a></p>
+    <p (click)="menuTrigger()"><a routerLink="/script-list" routerLinkActive="active">SCRIPTS</a></p>       
+    <p (click)="menuTrigger()"><a routerLink="/tool-list" routerLinkActive="active">OUTILS</a></p>       
+    <p (click)="menuTrigger()"><a routerLink="/source-list" routerLinkActive="active">SOURCES</a></p>   
+</div>
+
+<div (click)="menuTrigger()" *ngIf="menuActive" id="overlay"></div>

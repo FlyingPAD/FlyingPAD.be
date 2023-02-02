@@ -1,0 +1,121 @@
+#tonal_center
+{
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    h1
+    {
+        margin: 0;
+        margin-bottom: 15px;
+        font-size: 19px;
+        text-align: center;
+        color: #515151;	
+        text-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+
+        -moz-user-select: none; /* Firefox */
+        -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+        -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+        user-select: none; /* Propriété standard */
+    }
+
+    p
+    {
+        text-align: center;
+    }
+}
+
+#buttons
+{
+    display: flex;
+    justify-content: center;
+
+    background-color: rgba(210, 210, 210, 0.3);
+
+    margin-bottom: 15px;
+
+    p
+    {
+        display: block;
+
+        width: 100px;
+        
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgb(85, 85, 85);
+        color: white;
+
+        margin: 15px;
+        padding: 10px;
+
+        font-size: 13px;
+        font-weight: normal;
+        letter-spacing: 1px;
+        text-align: center;
+
+        -moz-user-select: none; /* Firefox */
+        -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+        -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+        user-select: none; /* Propriété standard */
+    }
+    p:hover
+    {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        transition-duration: 500ms;
+    }
+}
+
+#container_wheel
+{
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    margin-bottom: 50px;
+    z-index: 0;
+
+    img
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+
+        -moz-user-select: none; /* Firefox */
+        -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+        -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+        user-select: none; /* Propriété standard */
+    }
+}
+
+@media (max-width: 600px) 
+{
+    #container_wheel
+    {
+        width: 100%;
+        min-height: 450px;
+    }
+}
+
+/* --------------------------------------------------------------------------------- */
+/* KEY CLASSES */
+/* --------------------------------------------------------------------------------- */
+.key_1	{ transform: rotate(  0deg); }
+.key_2	{ transform: rotate(-30deg); }
+.key_3	{ transform: rotate(-60deg); }
+.key_4	{ transform: rotate(-90deg); }
+.key_5	{ transform: rotate(-120deg); }
+.key_6	{ transform: rotate(-150deg); }
+.key_7	{ transform: rotate(-180deg); }
+.key_8	{ transform: rotate(-210deg); }
+.key_9	{ transform: rotate(-240deg); }
+.key_10 { transform: rotate(-270deg); }
+.key_11 { transform: rotate(-300deg); }
+.key_12	{ transform: rotate(-330deg); }
+
+.stylish_move
+{
+    transition-duration: 500ms;
+}

@@ -1,0 +1,22 @@
+<app-back-tools></app-back-tools>
+
+<hr>
+
+<div id="tonal_center">
+    <h1>Tonalité : <b>{{keyFR}}</b> <span *ngIf="keyFRAlt != ''"> ou <b>{{keyFRAlt}}</b></span> Majeur</h1>
+</div>
+
+<div id="buttons">
+    <p (click)="rotateL()">To Left</p>
+    <p (click)="randomPosition()">RANDOM</p>
+    <p (click)="rotateR()">To Right</p>
+</div>
+
+<div id="tonal_center">
+    <h1>( Key : <b>{{keyEN}}</b> <span *ngIf="keyENAlt != ''"> or <b>{{keyENAlt}}</b></span> )</h1>
+</div>
+
+<div id="container_wheel">
+    <img src="../../../../assets/chord_wheel/wheel.png" class="stylish_move key_{{currentPosition}}" />
+    <img src="../../../../assets/chord_wheel/wheel_focus.png" />
+</div>
