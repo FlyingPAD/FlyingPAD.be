@@ -46,7 +46,7 @@ export class MetronomeComponent implements OnInit
 
   ngOnInit(): void 
   {
-    this.audio.src = "../../../../assets/audio/metronome_tik.mp3"
+    this.audio.src = "../../../../assets/audio/tik.mp3"
     this.audio.load()
   }
 
