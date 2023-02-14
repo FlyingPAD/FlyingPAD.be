@@ -7,8 +7,6 @@ import { HeaderComponent } from './components/core/header/header.component';
 import { FooterComponent } from './components/core/footer/footer.component';
 import { MenuLAComponent } from './components/core/menu-l-a/menu-l-a.component';
 import { MenuRAComponent } from './components/core/menu-r-a/menu-r-a.component';
-import { HomeComponent } from './components/main/home/home.component';
-import { AboutComponent } from './components/main/about/about.component';
 import { NotFoundComponent } from './components/main/not-found/not-found.component';
 import { ScriptListComponent } from './components/main/script-list/script-list.component';
 import { SourceListComponent } from './components/main/source-list/source-list.component';
@@ -27,6 +25,9 @@ import { PulsationComponent } from './components/scripts/lvla/pulsation/pulsatio
 import { TimeValuesAComponent } from './components/scripts/lvla/time-values-a/time-values-a.component';
 import { MelodyComponent } from './components/scripts/lvla/melody/melody.component';
 import { MetricsAComponent } from './components/scripts/lvla/metrics-a/metrics-a.component';
+import { MetronomeComponent } from './components/tools/metronome/metronome.component';
+import { FormsModule } from '@angular/forms';
+import { BpmToMsPipe } from './pipes/bpm-to-ms.pipe';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,6 @@ import { MetricsAComponent } from './components/scripts/lvla/metrics-a/metrics-a
     FooterComponent,
     MenuLAComponent,
     MenuRAComponent,
-    HomeComponent,
-    AboutComponent,
     NotFoundComponent,
     ScriptListComponent,
     SourceListComponent,
@@ -55,10 +54,13 @@ import { MetricsAComponent } from './components/scripts/lvla/metrics-a/metrics-a
     TimeValuesAComponent,
     MelodyComponent,
     MetricsAComponent,
+    MetronomeComponent,
+    BpmToMsPipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

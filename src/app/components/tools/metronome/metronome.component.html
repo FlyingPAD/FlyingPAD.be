@@ -1,0 +1,57 @@
+<app-back-tools></app-back-tools>
+
+<hr>
+
+<div id="metronome">
+
+    <div id="title">
+        <h1>Custom Metronome | v.1.0</h1>
+    </div>
+
+    <div id="title-sub">
+        <p><b>BPM</b></p>
+        <p class="button" (click)="bpmSet(60)">60</p>
+        <p class="button" (click)="bpmSet(80)">80</p>
+        <p class="button" (click)="bpmSet(100)">100</p>
+        <p class="button" (click)="bpmSet(120)">120</p>
+        <p class="button" (click)="bpmSet(140)">140</p>
+    </div>
+
+    <div id="slider-box">
+        <input [(ngModel)]="bpm" type="range" [min]="bpmMIN" [max]="bpmMAX" [value]="bpm" id="slider" (mouseup)="bpmSet(bpm)" >
+    </div>
+
+    <div id="bpm">
+        <a (click)="bpmDecrement(10)"> -10</a>
+        <a (click)="bpmDecrement(1)"> -1</a>
+        <p>{{bpm | number : '3.2'}}</p>
+        <a (click)="bpmIncrement(1)"> +1</a>
+        <a (click)="bpmIncrement(10)"> +10</a>
+    </div>
+
+    <div id="ms">
+        <div class="ms-box">
+            <p> - Milliseconds</p>
+            <p>{{bpm / 1000 | bpmToMs | number : '0.2'}}</p>
+        </div>
+        <div class="ms-box">
+            <p> - Seconds</p>
+            <p>{{bpm | bpmToMs | number : '0.2'}}</p>
+        </div>
+    </div>
+
+    <div id="buttons">
+        <a *ngIf="intervalID == undefined" (click)="audioLoopPlay()">PLAY</a>
+        <a *ngIf="intervalID != undefined" (click)="audioLoopStop()">STOP</a>
+        <p [ngClass]="imgTik == true ? 'tik-active' : ''"></p>
+    </div>
+
+    <div id="title-sub">
+        <p><b>Volume</b></p>
+    </div>
+
+    <div id="slider-box">
+        <input [(ngModel)]="audio.volume" type="range" [min]="volumeMIN" [max]="volumeMAX" [value]="audio.volume" step="0.025" id="slider" >
+    </div>
+
+</div>
