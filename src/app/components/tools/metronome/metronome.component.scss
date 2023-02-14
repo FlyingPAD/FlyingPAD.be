@@ -128,7 +128,7 @@
         a
         {
             display: block;
-            width: 75px;
+            width: 70px;
             height: 50px;
 
             border: 2px solid black;
@@ -170,5 +170,13 @@
         {
             width: 100%;
         }
+    }
+}
+
+@media (max-width: 500px) 
+{
+    #metronome
+    {
+        width: 275px;
     }
 }
