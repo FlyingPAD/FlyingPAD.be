@@ -28,9 +28,11 @@ import { MetricsAComponent } from './components/scripts/lvla/metrics-a/metrics-a
 import { MetronomeComponent } from './components/tools/metronome/metronome.component';
 import { FormsModule } from '@angular/forms';
 import { BpmToMsPipe } from './pipes/bpm-to-ms.pipe';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
-  declarations: [
+  declarations: 
+  [
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -55,14 +57,18 @@ import { BpmToMsPipe } from './pipes/bpm-to-ms.pipe';
     MelodyComponent,
     MetricsAComponent,
     MetronomeComponent,
-    BpmToMsPipe,
+    BpmToMsPipe
   ],
-  imports: [
+  imports: 
+  [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: 
+  [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
