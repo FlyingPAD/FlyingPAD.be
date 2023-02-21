@@ -1,11 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-metronome',
-  templateUrl: './metronome.component.html',
-  styleUrls: ['./metronome.component.scss']
-})
-export class MetronomeComponent implements OnInit 
+export class Process
 {
   // -------------------------------------------------------------------------------------------
   // - Properties :
@@ -29,6 +22,8 @@ export class MetronomeComponent implements OnInit
   constructor ()
   {
     this.audio = new Audio()
+    this.audio.src = "../../../../assets/audio/tik.mp3"
+    this.audio.load()
 
     this.bpm = 120
     this.bpmMIN = 30
@@ -39,17 +34,6 @@ export class MetronomeComponent implements OnInit
     this.volumeMAX = 1.0
 
     this.imgTik = false
-
-    this.workerMetronome()
-  }
-
-  // -------------------------------------------------------------------------------------------
-  // - Initialization :
-
-  ngOnInit(): void 
-  {
-    this.audio.src = "../../../../assets/audio/tik.mp3"
-    this.audio.load()
   }
 
   // -------------------------------------------------------------------------------------------
@@ -130,34 +114,6 @@ export class MetronomeComponent implements OnInit
       clearInterval(this.intervalID)
       this.intervalID = undefined
       this.imgTik = false
-    }
-  }
-
-  // -------------------------------------------------------------------------------------------
-  // - Component Destruction :
-
-  ngOnDestroy(): void 
-  {
-    if (this.intervalID) 
-    {
-      clearInterval(this.intervalID)
-      this.intervalID = undefined
-      this.imgTik = false
-    }
-  }
-
-  workerMetronome()
-  {
-    if (typeof Worker !== 'undefined') {
-      // Create a new
-      const worker = new Worker(new URL('./metronome.worker', import.meta.url));
-      worker.onmessage = ({ data }) => {
-        console.log(`page got message: ${data}`);
-      };
-      worker.postMessage('hello');
-    } else {
-      // Web Workers are not supported in this environment.
-      // You should add a fallback so that your program still executes correctly.
     }
   }
 }
